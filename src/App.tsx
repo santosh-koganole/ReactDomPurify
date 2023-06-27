@@ -1,5 +1,9 @@
 import DOMPurify from "dompurify";
+import { useState } from "react";
+
 function App() {
+  const [inputText, setInputText] = useState("");
+
   const html = `<a href="javascript:alert('Ha ha Attack HTML !!!')">Hello!</a>`;
   //const html = `<a href="#" onClick="alert('Hello')">Hello!</a>`;
 
@@ -24,9 +28,21 @@ function App() {
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(img) }}></div>
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html3) }}></div> */}
 
-      <textarea style={{ width: "100%", height: "400px" }}>
+      <textarea style={{ width: "50%", height: "200px" }}>
         {DOMPurify.sanitize(html)}
       </textarea>
+
+      <textarea
+        style={{ width: "50%", height: "200px" }}
+        placeholder={
+          "Input Text Here, try entering some script tag and see the changes below"
+        }
+        onChange={(e) => setInputText(e.target.value)}
+      ></textarea>
+
+      {/* React is XSS protected by design. If any script of malicious code written in text area then React will handle such attack by iteself
+     by hiding or escaping that script itself */}
+      <div dangerouslySetInnerHTML={{ __html: inputText }}></div>
     </div>
   );
 }
