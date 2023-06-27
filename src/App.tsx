@@ -20,20 +20,24 @@ function App() {
       {/* Before sanitization */}
 
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <br />
       <div dangerouslySetInnerHTML={{ __html: img }}></div>
+      <br />
       <div dangerouslySetInnerHTML={{ __html: html3 }}></div>
 
       {/* After sanitization */}
       {/* <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}></div>
+      <br/>
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(img) }}></div>
+      <br/>
       <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html3) }}></div> */}
 
-      <textarea style={{ width: "50%", height: "200px" }}>
+      <textarea style={{ width: "50%", height: "100px" }}>
         {DOMPurify.sanitize(html)}
       </textarea>
 
       <textarea
-        style={{ width: "50%", height: "200px" }}
+        style={{ width: "50%", height: "100px" }}
         placeholder={
           "Input Text Here, try entering some script tag and see the changes below"
         }
