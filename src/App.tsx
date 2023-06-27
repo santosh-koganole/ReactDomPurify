@@ -10,9 +10,9 @@ function App() {
 
   return (
     <div>
-      <h1>XSS Sanatize Markdown Exploits</h1>
+      <h1>XSS Sanatize Demo for React application</h1>
 
-      <h3>Exploit</h3>
+      <h3>POC</h3>
       {/* <div dangerouslySetInnerHTML={{ __html: htmlSanatized }}></div> */}
       <div dangerouslySetInnerHTML={{ __html: imgSanatized }}></div>
 
