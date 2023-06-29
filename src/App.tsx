@@ -39,7 +39,7 @@ function App() {
           out everything that contains dangerous HTML and thereby prevent XSS
           attacks and other nastiness.`}
         </p>
-        <p>{`Command to install in React application:  npm i --save-dev @types/dompurify`}</p>
+        <p>{`Command to install in React application: npm i dompurify & npm i --save-dev @types/dompurify`}</p>
 
         <b>Note: </b>
         <ol>
